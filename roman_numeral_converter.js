@@ -17,9 +17,10 @@ function fillBases () {
         let currentElement = keys[i];
         let previousElement = keys[i-1];
 
-        if(previousElement * 2 !== currentElement ){
+        if(previousElement * 2 != currentElement ){
+
             let keyNumber =currentElement-previousElement;
-            BASES[keyNumber]=BASES[previousElement.toString().concat(currentElement)];
+            BASES[keyNumber]=BASES[previousElement]+BASES[currentElement];
         }else{
             let previousPreviousElement = keys[i-2];
             BASES[currentElement-previousPreviousElement]=BASES[previousPreviousElement]+BASES[currentElement];
@@ -74,4 +75,4 @@ function convertToRoman(num) {
 
 }
 fillBases();
-console.log(convertToRoman(5),"FINAL");
+console.log(convertToRoman(1004),"FINAL");
